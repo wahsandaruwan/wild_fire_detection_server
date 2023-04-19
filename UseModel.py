@@ -3,7 +3,7 @@ import pickle as pk
 import numpy as np
 
 # -----Generate prediction function-----
-def generate_predition(env_data):
+def generate_prediction(env_data):
     """Generate wild fire intensity level based on environmental data
     """ 
     # Preprocess   
@@ -16,6 +16,6 @@ def generate_predition(env_data):
     # Get the prediction
     result = loaded_model.predict(env_data_reshape)
 
-    print(result)
+    return str(result[0])
 
-# generate_predition([94.9, 130.3, 587.1,	14.1, 97.4,	40,	5.8, 0, 1])
+# generate_prediction([94.9, 130.3, 587.1,	14.1, 97.4,	40,	5.8, 0, 1])
