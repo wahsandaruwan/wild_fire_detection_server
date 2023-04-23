@@ -1,7 +1,7 @@
 # -----Imports-----
 import json
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
 from UseModel import generate_prediction
@@ -14,6 +14,11 @@ app = Flask(__name__)
 CORS(app)
 
 # -----API endpoints-----
+# Initial
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 # Read data
 @app.route('/data/read', methods=['GET']) # http://mydomain.com/data/read
 def read_data():
